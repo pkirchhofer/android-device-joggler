@@ -1,0 +1,6 @@
+# system.prop
+ro.sf.lcd_density=120
+debug.egl.hw=0
+debug.sf.nobootanimation=0
+debug.logcat=0
+system_init.startsurfaceflinger=1

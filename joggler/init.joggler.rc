@@ -1,0 +1,37 @@
+on boot
+    insmod /modules/drivers/gpu/drm/drm.ko
+    insmod /modules/drivers/gpu/drm/drm_kms_helper.ko
+    insmod /modules/drivers/gpu/drm/ttm/ttm.ko
+    insmod /modules/drivers/gpu/drm/gma500/gma500_gfx.ko
+
+    # Tweak background writeout
+    write /proc/sys/vm/dirty_expire_centisecs 3000
+    write /proc/sys/vm/dirty_background_ratio 20
+
+on fs
+    mount ext4 /dev/block/sda3 /data barrier=0 commit=30
+
+on post-fs-data
+   setprop wifi.interface "wlan0"
+   setprop wlan.interface "wlan0"
+   setprop wlan.driver.status "ok"
+   setprop vold.post_fs_data_done 1
+
+on property:ro.debuggable=1
+   start adbd
+
+service dhcpcd_wlan0 /system/bin/dhcpcd -ABKL
+    group system dhcp
+    disabled
+    oneshot
+    onrestart restart adbd
+
+service iprenew_wlan0 /system/bin/dhcpcd -n
+    class main
+    disabled
+    oneshot
+
+service ntpd /system/xbin/ntpd -p ptbtime1.ptb.de
+    disabled
+    oneshot
+
