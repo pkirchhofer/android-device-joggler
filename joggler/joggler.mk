@@ -14,9 +14,6 @@
 # limitations under the License.
 #
 
-PRODUCT_COPY_FILES := \
-    $(LOCAL_PATH)/init.$(TARGET_PRODUCT).rc:root/init.$(TARGET_PRODUCT).rc
-
 $(call inherit-product,$(SRC_TARGET_DIR)/product/generic_x86.mk)
 
 PRODUCT_NAME := joggler

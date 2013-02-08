@@ -8,12 +8,4 @@
 #      http://www.apache.org/licenses/LICENSE-2.0
 #
 
-# the path of target's AndroidBoard.mk that includes this file
-#TARGET_LOCAL_PATH := $(LOCAL_PATH)
-
-LOCAL_PATH := $(call my-dir)
-
-#TARGET_KERNEL_CONFIG := $(LOCAL_PATH)/generic_defconfig
-#TARGET_KERNEL_CONFIG := $(LOCAL_PATH)/config-3.5.0-android
-
 include $(GENERIC_X86_ANDROID_MK)
