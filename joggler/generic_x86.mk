@@ -14,11 +14,16 @@
 # limitations under the License.
 #
 
-$(call inherit-product,$(LOCAL_PATH)/generic_x86.mk)
+# Modified from build/target/product/generic_x86.mk
 
-PRODUCT_NAME := joggler
-PRODUCT_DEVICE := joggler
-PRODUCT_MANUFACTURER := OpenPeak
-PRODUCT_MODEL := O2 Joggler
-PRODUCT_BRAND := O2
-PRODUCT_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlays
+GENERIC_X86_DIR := device/common/generic_x86
+GENERIC_X86_CONFIG_MK := $(GENERIC_X86_DIR)/BoardConfig.mk
+GENERIC_X86_ANDROID_MK := $(GENERIC_X86_DIR)/AndroidBoard.mk
+
+$(call inherit-product, $(SRC_TARGET_DIR)/product/generic_no_telephony.mk)
+
+# Joggler packages
+$(call inherit-product, $(LOCAL_PATH)/packages.mk)
+
+# Generic x86 device configurations
+$(call inherit-product, $(GENERIC_X86_DIR)/device.mk)
