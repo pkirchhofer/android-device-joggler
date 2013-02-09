@@ -26,7 +26,6 @@ service iprenew_wlan0 /system/bin/dhcpcd -n
     disabled
     oneshot
 
-service ntpd /system/xbin/ntpd -p ptbtime1.ptb.de
-    disabled
-    oneshot
+service ntpd /system/xbin/ntpd -n -p ptbtime1.ptb.de
+    class main
 
