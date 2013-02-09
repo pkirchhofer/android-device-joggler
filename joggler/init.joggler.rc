@@ -1,9 +1,4 @@
 on boot
-    insmod /modules/drivers/gpu/drm/drm.ko
-    insmod /modules/drivers/gpu/drm/drm_kms_helper.ko
-    insmod /modules/drivers/gpu/drm/ttm/ttm.ko
-    insmod /modules/drivers/gpu/drm/gma500/gma500_gfx.ko
-
     # Tweak background writeout
     write /proc/sys/vm/dirty_expire_centisecs 3000
     write /proc/sys/vm/dirty_background_ratio 20
