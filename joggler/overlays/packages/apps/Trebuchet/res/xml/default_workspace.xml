@@ -16,34 +16,38 @@
 
 <favorites xmlns:launcher="http://schemas.android.com/apk/res/com.cyanogenmod.trebuchet">
     <!-- Far-left screen [0] -->
+
+    <!-- Left screen [1] -->
+
+    <!-- Middle screen [2] -->
     <favorite
         launcher:packageName="com.android.browser"
         launcher:className="com.android.browser.BrowserActivity"
-        launcher:screen="0"
+        launcher:screen="2"
         launcher:x="1"
         launcher:y="2" />
     <favorite
         launcher:packageName="com.android.calendar"
         launcher:className="com.android.calendar.AllInOneActivity"
-        launcher:screen="0"
+        launcher:screen="2"
         launcher:x="1"
         launcher:y="3" />
     <favorite
         launcher:packageName="com.android.contacts"
         launcher:className="com.android.contacts.activities.PeopleActivity"
-        launcher:screen="0"
+        launcher:screen="2"
         launcher:x="1"
         launcher:y="4" />
     <favorite
         launcher:packageName="com.android.settings"
         launcher:className="com.android.settings.Settings"
-        launcher:screen="0"
+        launcher:screen="2"
         launcher:x="1"
         launcher:y="5" />
     <appwidget
         launcher:packageName="com.android.deskclock"
         launcher:className="com.android.alarmclock.AnalogAppWidgetProvider"
-        launcher:screen="0"
+        launcher:screen="2"
         launcher:x="2"
         launcher:y="2"
         launcher:spanX="3"
@@ -51,40 +55,15 @@
     <appwidget
         launcher:packageName="com.android.calendar"
         launcher:className="com.android.calendar.widget.CalendarAppWidgetProvider"
-        launcher:screen="0"
+        launcher:screen="2"
         launcher:x="5"
         launcher:y="2"
         launcher:spanX="3"
         launcher:spanY="4" />
-
-    <!-- Left screen [1] -->
-
-    <!-- Middle screen [2] -->
 
     <!-- Right screen [3] -->
 
     <!-- Far-right screen [4] -->
 
     <!-- Hotseat (We use the screen as the position of the item in the hotseat) -->
-    <favorite
-        launcher:packageName="com.android.contacts"
-        launcher:className="com.android.contacts.activities.DialtactsActivity"
-        launcher:container="-101"
-        launcher:screen="0"
-        launcher:x="0"
-        launcher:y="0" />
-    <favorite
-        launcher:packageName="com.android.contacts"
-        launcher:className="com.android.contacts.activities.PeopleActivity"
-        launcher:container="-101"
-        launcher:screen="1"
-        launcher:x="1"
-        launcher:y="0" />
-    <favorite
-        launcher:packageName="com.android.browser"
-        launcher:className="com.android.browser.BrowserActivity"
-        launcher:container="-101"
-        launcher:screen="4"
-        launcher:x="4"
-        launcher:y="0" />
 </favorites>
