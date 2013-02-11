@@ -17,7 +17,8 @@
  */
 -->
 <resources>
-    <integer name="def_screen_off_timeout">600000</integer>
+    <integer name="def_screen_off_timeout">-1</integer>
+    <integer name="def_screen_brightness">255</integer>
     <bool name="def_install_non_market_apps">true</bool>
     <bool name="def_accelerometer_rotation">false</bool>
     <fraction name="def_window_animation_scale">0%</fraction>
