@@ -16,19 +16,8 @@
 
 # System packages for Joggler
 PRODUCT_PACKAGES := \
-    Galaxy4 \
-    GlobalTime \
-    HoloSpiralWallpaper \
-    LiveWallpapers \
-    LiveWallpapersPicker \
-    MagicSmokeWallpapers \
-    NoiseField \
     NotePad \
-    PhaseBeam \
     Provision \
-    SpareParts \
-    SpeechRecorder \
-    SoundRecorder \
     Stk \
     Superuser \
     VisualizationWallpapers \
@@ -46,7 +35,6 @@ PRODUCT_PACKAGES := \
     make_ext4fs \
     powerbtnd \
     su \
-    v86d \
 
 # Removed packages:
 #    Camera \
@@ -57,19 +45,33 @@ PRODUCT_PACKAGES := \
 #    RSSReader \
 #    VideoEditor \
 #    VoiceDialer \
+#    v86d \
+#    Galaxy4 \
+#    HoloSpiralWallpaper \
+#    LiveWallpapers \
+#    LiveWallpapersPicker \
+#    MagicSmokeWallpapers \
+#    NoiseField \
+#    PhaseBeam \
+#    GlobalTime \
+#    SpeechRecorder \
+#    SoundRecorder \
+#    SpareParts \
 
 # Additional packages
 PRODUCT_PACKAGES += \
+    Gallery \
     Trebuchet \
 
-PRODUCT_PACKAGES += \
-    badblocks \
-    e2fsck \
-    mke2fs \
-    resize2fs \
-    tune2fs \
+#PRODUCT_PACKAGES += \
+#    badblocks \
+#    e2fsck \
+#    mke2fs \
+#    resize2fs \
+#    tune2fs \
 
-THIRD_PARTY_APPS = \
-    AndroidTerm \
-    FileManager \
-    LIME \
+#THIRD_PARTY_APPS = \
+#    AndroidTerm \
+#    FileManager \
+#    LIME \
+
