@@ -4,7 +4,7 @@ on boot
     write /proc/sys/vm/dirty_background_ratio 20
 
 on fs
-    mount ext4 /dev/block/sda3 /data barrier=0 commit=30
+    mount ext4 /dev/block/sda4 /data barrier=0 commit=30
 
 on post-fs-data
    setprop wifi.interface "wlan0"
