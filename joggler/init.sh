@@ -1,7 +1,7 @@
 PATH=/system/bin:/system/xbin
 
 alsa_amixer set Master on
-alsa_amixer set Master 100
+alsa_amixer set Master 20
 alsa_amixer set Capture 100
 alsa_amixer set Capture cap
 alsa_amixer set PCM 100 unmute
