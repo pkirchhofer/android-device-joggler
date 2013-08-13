@@ -14,7 +14,17 @@
 # limitations under the License.
 #
 
-$(call inherit-product,$(LOCAL_PATH)/generic_x86.mk)
+GENERIC_X86_DIR := device/common/generic_x86
+GENERIC_X86_CONFIG_MK := $(GENERIC_X86_DIR)/BoardConfig.mk
+GENERIC_X86_ANDROID_MK := $(GENERIC_X86_DIR)/AndroidBoard.mk
+
+$(call inherit-product, $(SRC_TARGET_DIR)/product/generic_no_telephony.mk)
+
+# Joggler packages
+$(call inherit-product, $(LOCAL_PATH)/packages.mk)
+
+# Generic x86 device configurations
+$(call inherit-product, $(LOCAL_PATH)/generic_x86_device.mk)
 
 PRODUCT_NAME := joggler
 PRODUCT_DEVICE := joggler
@@ -22,3 +32,11 @@ PRODUCT_MANUFACTURER := OpenPeak
 PRODUCT_MODEL := O2 Joggler
 PRODUCT_BRAND := O2
 PRODUCT_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlays
+
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    debug.logcat=0 \
+    debug.adbd=1 \
+    debug.sf.nobootanimation=0 \
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/joggler-sound.patch:system/lib/firmware/joggler-sound.patch
