@@ -543,6 +543,26 @@ service logcat /system/bin/logcat -v threadtime -f /data/log.txt
     disabled
     oneshot
 
+service dhcpcd_wlan0 /system/bin/dhcpcd -ABDKL
+    class main
+    disabled
+    oneshot
+
+service iprenew_wlan0 /system/bin/dhcpcd -n
+    class main
+    disabled
+    oneshot
+
+service dhcpcd_eth0 /system/bin/dhcpcd -ABDKL
+    class main
+    disabled
+    oneshot
+
+service iprenew_eth0 /system/bin/dhcpcd -n
+    class main
+    disabled
+    oneshot
+
 on property:system_init.startsurfaceflinger=0
     start surfaceflinger
     stop console

@@ -15,17 +15,6 @@ on post-fs-data
 on property:debug.adbd=1
    start adbd
 
-service dhcpcd_wlan0 /system/bin/dhcpcd -ABKL
-    group system dhcp
-    disabled
-    oneshot
-    onrestart restart adbd
-
-service iprenew_wlan0 /system/bin/dhcpcd -n
-    class main
-    disabled
-    oneshot
-
 service ntpd /system/xbin/ntpd -n -p ptbtime1.ptb.de
     class main
 
