@@ -39,4 +39,4 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     debug.sf.nobootanimation=0 \
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/joggler-sound.patch:system/lib/firmware/joggler-sound.patch
+    $(LOCAL_PATH)/joggler-stac9202.patch:system/lib/firmware/joggler-stac9202.patch
