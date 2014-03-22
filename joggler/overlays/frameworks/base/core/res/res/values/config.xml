@@ -17,10 +17,24 @@
  */
 -->
 <resources>
+<!--
     <bool name="config_reverseDefaultRotation">true</bool>
     <integer name="config_lidOpenRotation">0</integer>
     <bool name="config_enableLockScreenRotation">true</bool>
+-->
     <bool name="config_voice_capable">false</bool>
     <bool name="config_sms_capable">false</bool>
     <bool name="config_built_in_sip_phone">false</bool>
+
+    <bool name="config_sf_limitedAlpha">true</bool>
+    <bool name="config_avoidGfxAccel">true</bool>
+    <bool name="config_showNavigationBar">true</bool>
+<!--
+    <integer name="config_multiuserMaximumUsers">4</integer>
+    <bool name="config_forceDefaultOrientation">false</bool>
+-->
+
+    <!-- When true use the linux /dev/input/event subsystem to detect the switch changes
+         on the headphone/microphone jack. When false use the older uevent framework. -->
+    <bool name="config_useDevInputEventForAudioJack">true</bool>
 </resources>

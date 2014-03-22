@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2011 The Android-x86 Open Source Project
+# Copyright (C) 2012 The Android-x86 Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,54 +14,37 @@
 # limitations under the License.
 #
 
-# System packages for Joggler
+# Common packages for Android-x86 platform.
+
 PRODUCT_PACKAGES := \
-    NotePad \
-    Provision \
-    Stk \
-    Superuser \
-    VisualizationWallpapers \
-    camera.default \
+    camera.x86 \
     chat \
     com.android.future.usb.accessory \
     drmserver \
     eject \
     gps.default \
-    hwcomposer.default \
+    hwcomposer.x86 \
     icu.dat \
-    libdrmframework_jni \
-    libhuaweigeneric-ril \
+    io_switch \
     lights.default \
     make_ext4fs \
     powerbtnd \
     su \
 
 # Removed packages:
-#    Camera \
+#    BasicSmsReceiver \
 #    Development \
-#    JETBoy \
-#    LunarLander \
-#    Snake \
-#    RSSReader \
-#    VideoEditor \
-#    VoiceDialer \
-#    v86d \
 #    Galaxy4 \
+#    GlobalTime \
 #    HoloSpiralWallpaper \
 #    LiveWallpapers \
 #    LiveWallpapersPicker \
 #    MagicSmokeWallpapers \
-#    NoiseField \
+#    NotePad \
 #    PhaseBeam \
-#    GlobalTime \
-#    SpeechRecorder \
-#    SoundRecorder \
-#    SpareParts \
-
-# Additional packages
-PRODUCT_PACKAGES += \
-    Gallery \
-    Trebuchet \
+#    Provision \
+#    RSSReader \
+#    VisualizationWallpapers \
 
 #PRODUCT_PACKAGES += \
 #    badblocks \
@@ -70,8 +53,16 @@ PRODUCT_PACKAGES += \
 #    resize2fs \
 #    tune2fs \
 
-#THIRD_PARTY_APPS = \
+# Third party apps
+#PRODUCT_PACKAGES += \
 #    AndroidTerm \
 #    FileManager \
 #    LIME \
 
+# Additional packages
+PRODUCT_PACKAGES += \
+    Gallery \
+    Launcher2 \
+
+# Removed packages:
+#   Trebuchet \

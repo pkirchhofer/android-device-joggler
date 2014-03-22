@@ -1,7 +1,4 @@
 # begin system properties
 backlight.brightness_file=/sys/class/backlight/openframe-bl/brightness
 backlight.max_brightness_file=/sys/class/backlight/openframe-bl/max_brightness
-ro.sf.lcd_density=120
-debug.egl.hw=0
-#system_init.startsurfaceflinger=1
 # end system properties
