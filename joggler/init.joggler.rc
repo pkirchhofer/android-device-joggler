@@ -15,6 +15,9 @@ on post-fs-data
 on property:debug.adbd=1
    start adbd
 
+on property:debug.logcat=1
+   start logcat
+
 service ntpd /system/xbin/ntpd -n -p ptbtime1.ptb.de
     class main
 

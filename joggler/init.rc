@@ -6,8 +6,7 @@
 
 import /init.environ.rc
 import /init.usb.rc
-#import /init.${ro.arch}.rc
-import /init.x86.rc
+import /init.${ro.arch}.rc
 import /init.${ro.hardware}.rc
 import /init.trace.rc
 

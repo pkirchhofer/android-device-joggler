@@ -17,17 +17,17 @@
 GENERIC_X86_DIR := device/generic/x86
 GENERIC_X86_CONFIG_MK := $(GENERIC_X86_DIR)/BoardConfig.mk
 
-# Get a list of languages.
-$(call inherit-product,$(SRC_TARGET_DIR)/product/locales_full.mk)
-#$(call inherit-product,$(SRC_TARGET_DIR)/product/languages_small.mk)
-
-$(call inherit-product, $(SRC_TARGET_DIR)/product/generic_no_telephony.mk)
-
 # Get some sounds
 $(call inherit-product, frameworks/base/data/sounds/AudioPackage6.mk)
+#$(call inherit-product, frameworks/base/data/sounds/AllAudio.mk)
 
 # Generic x86 device configurations
 $(call inherit-product, $(LOCAL_PATH)/generic_x86_device.mk)
+
+# Get a list of languages.
+$(call inherit-product,$(SRC_TARGET_DIR)/product/locales_full.mk)
+
+$(call inherit-product, $(SRC_TARGET_DIR)/product/generic_no_telephony.mk)
 
 # Joggler packages
 $(call inherit-product, $(LOCAL_PATH)/packages.mk)
@@ -42,15 +42,20 @@ PRODUCT_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlays
 DEVICE_PACKAGE_OVERLAYS := frameworks/webview/chromium/overlay
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.arch=x86 \
+    ro.rtc_local_time=1 \
     debug.logcat=0 \
     debug.adbd=1 \
     debug.sf.nobootanimation=0 \
     ro.sf.lcd_density=120 \
+    persist.sys.root_access=3 \
 
 # Enable Low Ram Device flag
-#PRODUCT_PROPERTY_OVERRIDES += ro.config.low_ram=true
+PRODUCT_PROPERTY_OVERRIDES += ro.config.low_ram=true
 
+# Copy firmware files
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/joggler-stac9202.patch:system/lib/firmware/joggler-stac9202.patch
+    $(LOCAL_PATH)/joggler-stac9202.patch:system/lib/firmware/joggler-stac9202.patch \
+    /lib/firmware/rt2870.bin:system/lib/firmware/rt2870.bin \
 
 #$(call inherit-product, frameworks/webview/chromium/chromium.mk)

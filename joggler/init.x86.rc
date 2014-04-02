@@ -43,7 +43,7 @@ on init
     #setprop ro.product.manufacturer $[/sys/class/dmi/id/sys_vendor]
     #setprop ro.product.model $[/sys/class/dmi/id/product_name]
 
-    #exec /system/bin/logwrapper /system/bin/sh /system/etc/init.sh
+    exec /system/bin/logwrapper /system/bin/sh /system/etc/init.sh
 
 on post-fs-data
     mkdir /data/media 0770 media_rw media_rw
@@ -56,9 +56,6 @@ on post-fs-data
 
     # Set indication (checked by vold) that we have finished this action
     setprop vold.post_fs_data_done 1
-
-on early-boot
-    readprops /x86.prop
 
 on boot
     setprop ro.radio.use-ppp yes

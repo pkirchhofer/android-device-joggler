@@ -18,23 +18,18 @@
 #
 # Modified from device/generic/x86/device.mk
 
-PRODUCT_PROPERTY_OVERRIDES := \
-    ro.arch=x86 \
-    ro.rtc_local_time=1 \
-
 # Files for init system
 PRODUCT_COPY_FILES := \
     $(LOCAL_PATH)/init.rc:root/init.rc \
     $(LOCAL_PATH)/init.x86.rc:root/init.x86.rc \
     $(LOCAL_PATH)/init.$(TARGET_PRODUCT).rc:root/init.$(TARGET_PRODUCT).rc \
+    $(LOCAL_PATH)/init.sh:system/etc/init.sh \
     $(GENERIC_X86_DIR)/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
-
-#    $(LOCAL_PATH)/init.sh:system/etc/init.sh \
-#    $(if $(wildcard $(PRODUCT_DIR)excluded-input-devices.xml),$(PRODUCT_DIR),$(LOCAL_PATH)/)excluded-input-devices.xml:system/etc/excluded-input-devices.xml \
-#    $(if $(wildcard $(PRODUCT_DIR)ueventd.$(TARGET_PRODUCT).rc),$(PRODUCT_DIR)ueventd.$(TARGET_PRODUCT).rc,$(LOCAL_PATH)/ueventd.x86.rc):root/ueventd.$(TARGET_PRODUCT).rc \
 
 # Other files
 PRODUCT_COPY_FILES += \
+    $(GENERIC_X86_DIR)/media_codecs.xml:system/etc/media_codecs.xml \
+    $(GENERIC_X86_DIR)/media_profiles.xml:system/etc/media_profiles.xml \
     frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
@@ -55,12 +50,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
     $(foreach f,$(wildcard $(GENERIC_X86_DIR)/idc/*.idc),$(f):$(subst $(GENERIC_X86_DIR),system/usr,$(f)))
 
-#    $(GENERIC_X86_DIR)/ppp/ip-up:system/etc/ppp/ip-up \
-#    $(GENERIC_X86_DIR)/ppp/ip-down:system/etc/ppp/ip-down \
-#    $(GENERIC_X86_DIR)/ppp/peers/gprs:system/etc/ppp/peers/gprs \
-#    $(GENERIC_X86_DIR)/media_codecs.xml:system/etc/media_codecs.xml \
-#    $(GENERIC_X86_DIR)/media_profiles.xml:system/etc/media_profiles.xml \
-
 PRODUCT_TAGS += dalvik.gc.type-precise
 
 PRODUCT_CHARACTERISTICS := tablet,nosdcard
@@ -71,7 +60,7 @@ PRODUCT_AAPT_PREF_CONFIG := mdpi
 DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlays
 
 # Get the firmwares
-$(call inherit-product,$(GENERIC_X86_DIR)/firmware.mk)
+#$(call inherit-product,$(GENERIC_X86_DIR)/firmware.mk)
 
 # Get the touchscreen calibration tool
 $(call inherit-product-if-exists,external/tslib/tslib.mk)

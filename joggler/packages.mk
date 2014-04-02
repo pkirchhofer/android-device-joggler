@@ -62,7 +62,7 @@ PRODUCT_PACKAGES := \
 # Additional packages
 PRODUCT_PACKAGES += \
     Gallery \
-    Launcher2 \
 
 # Removed packages:
-#   Trebuchet \
+#    Launcher2 \
+#    Trebuchet \
